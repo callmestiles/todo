@@ -1,0 +1,86 @@
+@import "../assets/partials/base";
+@import "../assets/partials/theme";
+@import "../assets/partials/variables";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  // scrollbar-color: $Bright-Blue $Very-Dark-Grayish-Blue;  //to change color of scrollbar
+  scrollbar-width: none; //hides scrollbar
+
+  @media only screen and (max-width: $bp-largest){
+    font-size: 55%;
+  }
+
+  @media only screen and (max-width: $bp-small){
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: [col-start] 1fr [center-start] 1.5fr [center-end] 1fr [col-end];
+  min-height: 100vh;
+
+  @media only screen and (max-width: $bp-largest){
+    grid-template-columns: [col-start] 1fr [center-start] 2.5fr [center-end] 1fr [col-end];
+  }
+
+  @media only screen and (max-width: $bp-small){
+    grid-template-columns: [col-start] 1fr [center-start] 3.5fr [center-end] 1fr [col-end];
+  }
+
+  @media only screen and (max-width: $bp-smallest){
+    grid-template-columns: [col-start] .5rem [center-start] 1fr [center-end] .5rem[col-end];
+  }
+
+  &__top{
+    grid-column: col-start / col-end;
+    height: 40vh;
+    grid-row: 1 / 2;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../public/images/bg-desktop-dark.jpg);
+
+    &--light {
+      background-image: url(../../public/images/bg-desktop-light.jpg);
+    }
+
+  }
+
+  &__bottom{
+    grid-column: col-start / col-end;
+    grid-row: 2 / 3;
+    background-color: $Very-Dark-Blue;
+
+    &--light {
+      background-color: $Very-Light-Grayish-Blue;
+    }
+  }
+}
+
+#root {
+  // position: absolute;
+  grid-column: center-start / center-end;
+  grid-row: 1 / -1;
+  padding: 3rem;
+  // background-color: black;
+}

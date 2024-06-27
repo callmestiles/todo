@@ -1,0 +1,91 @@
+@import "../../assets/partials/base";
+@import "../../assets/partials/theme";
+@import "../../assets/partials/variables";
+
+.form {
+    @extend %container-styles;
+    border-radius: 7px;
+    margin-bottom: 3rem;
+
+    &--dark {
+        @include theme($dark-theme-colors);
+    }
+
+    &--light{
+        @include theme($light-theme-colors);
+    }
+}
+
+
+.text-input {
+    @extend %text-styles;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    caret-color: $Bright-Blue;
+
+    &::placeholder{
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    &:focus{
+        outline: none;
+        border: none;
+    }
+
+    &--dark {
+        @include theme($dark-theme-colors);
+    }
+
+    &--light {
+        @include theme($light-theme-colors);
+    }
+}
+
+.radio {
+    display: none;
+
+    &__container {
+        margin-left: 2rem;
+        position: relative;
+        display: block;
+        height: 3rem;
+        width: 3rem;
+        cursor: pointer;
+    }
+
+    &__button {
+        display: block;
+        position: absolute;
+        height: 3rem;
+        width: 3rem;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: 1.5px solid $Light-Grayish-Blue;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 3rem;
+            width: 3rem;
+            top: 50%;
+            left: 50%;
+            background-image: url("../../../public/images/icon-check.svg"), linear-gradient(to right bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all .2s ease;
+        }
+    }
+
+    &:checked + &__container &__button::after {
+        opacity: 1;
+    }
+
+}
+
+

@@ -1,0 +1,12 @@
+
+@import "../../assets/partials/base";
+
+.footer{
+    &__text {
+        font-size: 1.7rem;
+        font-weight: 300;
+        color: $Dark-Grayish-Blue;
+        text-align: center;
+        margin-top: 3rem;
+    }
+}

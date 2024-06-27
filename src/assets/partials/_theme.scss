@@ -1,0 +1,14 @@
+@import "./variables";
+
+@mixin theme($theme-color) {
+    background-color: map-get($theme-color, background);
+    color: map-get($theme-color, text);
+}
+
+@mixin dark-theme-hover {
+    color: $Light-Grayish-Blue;
+}
+
+@mixin light-theme-hover {
+    color: $Very-Dark-Desaturated-Blue;
+}

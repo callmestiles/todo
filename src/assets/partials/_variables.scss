@@ -1,0 +1,11 @@
+@import "./base";
+
+$dark-theme-colors: (
+    text: $Light-Grayish-Blue,
+    background: $Very-Dark-Desaturated-Blue,
+);
+
+$light-theme-colors: (
+    text: $Very-Dark-Grayish-Blue,
+    background: $Very-Light-Gray,
+);

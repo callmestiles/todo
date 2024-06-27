@@ -1,0 +1,52 @@
+@import "../../assets/partials/base";
+@import "../../assets/partials/theme";
+@import "../../assets/partials/variables";
+
+.note-div {
+    @extend %container-styles;
+    border-bottom: 1px solid $Dark-Grayish-Blue;
+
+    &--dark {
+        @include theme($dark-theme-colors);
+    }
+
+    &--light {
+        @include theme($light-theme-colors);
+    }
+}
+
+.text{
+    @extend %text-styles;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    &--dark{
+        @include theme($dark-theme-colors);
+    }
+
+    &--light {
+        @include theme($light-theme-colors);
+    }
+
+}
+
+.cross {
+    display: block;
+    opacity: 0;
+    width: 2rem;
+    aspect-ratio: 1;
+    border: 0;
+    background: transparent;
+    background-image: url("../../../public/images/icon-cross.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: opacity .2s;
+}
+
+.text:hover .cross {
+    opacity: 1;
+}

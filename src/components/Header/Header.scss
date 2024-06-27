@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4.5rem 0;
+
+    &__text {
+        font-size: 4rem;
+        color: #fff;
+        letter-spacing: 1rem;
+        font-weight: 700;
+    }
+
+    &__img{
+        cursor: pointer;
+    }
+}
